@@ -8,7 +8,6 @@ const App = defineComponent({
       numberOne: 0,
       numberTwo: 0,
       operatorActive: '',
-      result: 0,
     };
   },
 
@@ -17,21 +16,18 @@ const App = defineComponent({
       a = this.numberOne
       b = this.numberTwo
       if(this.operatorActive === "sum") {
-        return this.result = (a + b)
+        return  (a + b)
       }
       if(this.operatorActive === "subtract") {
-        return this.result = (a - b)
+        return (a - b)
       }
       if(this.operatorActive === "multiply") {
-        return this.result = (a * b)
+        return (a * b)
       }
       if(this.operatorActive === "divide") {
-        return this.result = (a / b)
+        return (a / b)
       }
     },
-  },
-  methods: {
-
   },
 
 });
