@@ -1,6 +1,33 @@
-// import { createApp } from './vendor/vue.esm-browser.js';
+import { createApp } from './vendor/vue.esm-browser.js';
+import {defineComponent} from "../02-VueCalculator/vendor/vue.esm-browser";
 
 // From https://jsonplaceholder.typicode.com/comments
+
+// Требуется создать Vue приложение
+const App = defineComponent({
+  name: 'App',
+
+  data() {
+    return {
+      emails,
+      filter: {
+        search: '',
+      },
+    };
+  },
+
+  computed: {
+
+    markedEmails() {
+      return this.emails.map((email) => ({
+        email,
+        marked: this.filter.search && email.toLowerCase().includes(this.filter.search.toLowerCase()),
+      }));
+    },
+  },
+
+});
+
 const emails = [
   'Eliseo@gardner.biz',
   'Jayne_Kuhic@sydney.com',
@@ -29,4 +56,8 @@ const emails = [
   'Isaias_Kuhic@jarrett.net',
 ];
 
-// Требуется создать Vue приложение
+const app = createApp(App);
+
+const vm = app.mount('#app');
+
+window.vm = vm;
