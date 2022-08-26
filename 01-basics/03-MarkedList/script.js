@@ -5,31 +5,31 @@ import {defineComponent} from "../02-VueCalculator/vendor/vue.esm-browser";
 
 // Требуется создать Vue приложение
 const App = defineComponent({
-  name: 'App',
+name: 'App',
 
-  data() {
-    return {
-      emails,
-      filter: {
-        search: '',
-      },
-    };
+data() {
+return {
+  emails,
+    filter: {
+    search: '',
   },
+};
+},
 
-  computed: {
+computed: {
 
-    markedEmails() {
-      return this.emails.map((email) => ({
-        email,
-        marked: this.filter.search && email.toLowerCase().includes(this.filter.search.toLowerCase()),
-      }));
-    },
+  markedEmails() {
+    return this.emails.map((email) => ({
+      email,
+      marked: this.filter.search && email.toLowerCase().includes(this.filter.search.toLowerCase()),
+    }));
   },
+},
 
 });
 
 const emails = [
-  'Eliseo@gardner.biz',
+'Eliseo@gardner.biz',
   'Jayne_Kuhic@sydney.com',
   'Nikita@garfield.biz',
   'Lew@alysha.tv',
@@ -60,4 +60,4 @@ const app = createApp(App);
 
 const vm = app.mount('#app');
 
-window.vm = vm;
+
